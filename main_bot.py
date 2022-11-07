@@ -109,7 +109,7 @@ async def films_command(msg: types.Message):
     await message3.delete()
     del message3
     countofmovie = 1
-    caption = f"""Вернуться в главное меню - /back"""
+    caption = f"""Вернуться в главное меню - /menu"""
     
     media = types.MediaGroup()
     media.attach_photo(InputMediaPhoto(data[(countofmovie-1)*6].get('img_link'), caption=f"1. {data[(countofmovie-1)*6].get('title')} {data[(countofmovie-1)*6].get('film_quality')+' ' if data[(countofmovie-1)*6].get('film_quality') else ''}{' '.join(data[(countofmovie-1)*6].get('description'))}"))
@@ -149,7 +149,7 @@ async def films(callback_query: types.CallbackQuery):
     await message3.delete()
     del message3
     countofmovie = 1
-    caption = f"""Вернуться в главное меню - /back"""
+    caption = f"""Вернуться в главное меню - /menu"""
     
     media = types.MediaGroup()
     media.attach_photo(InputMediaPhoto(data[(countofmovie-1)*6].get('img_link'), caption=f"1. {data[(countofmovie-1)*6].get('title')} {data[(countofmovie-1)*6].get('film_quality')+' ' if data[(countofmovie-1)*6].get('film_quality') else ''}{' '.join(data[(countofmovie-1)*6].get('description'))}"))
@@ -194,7 +194,7 @@ async def load_more(callback_query: types.CallbackQuery):
     except:
         pass
     countofmovie += 1
-    caption = f"""Вернуться в главное меню - /back"""
+    caption = f"""Вернуться в главное меню - /menu"""
     media = types.MediaGroup()
     media.attach_photo(InputMediaPhoto(data[(countofmovie-1)*6].get('img_link'), caption=f"1. {data[(countofmovie-1)*6].get('title')} {data[(countofmovie-1)*6].get('film_quality')+' ' if data[(countofmovie-1)*6].get('film_quality') else ''}{' '.join(data[(countofmovie-1)*6].get('description'))}"))
     media.attach_photo(InputMediaPhoto(data[(countofmovie-1)*6+1].get('img_link'), caption=f"2. {data[(countofmovie-1)*6+1].get('title')} {data[(countofmovie-1)*6+1].get('film_quality')+' ' if data[(countofmovie-1)*6+1].get('film_quality') else ''}{' '.join(data[(countofmovie-1)*6+1].get('description'))}"))
@@ -241,7 +241,7 @@ async def load_more_up(callback_query: types.CallbackQuery):
     except:
         pass
     countofmovie -= 1
-    caption = f"""Вернуться в главное меню - /back"""
+    caption = f"""Вернуться в главное меню - /menu"""
     media = types.MediaGroup()
     media.attach_photo(InputMediaPhoto(data[(countofmovie-1)*6].get('img_link'), caption=f"1. {data[(countofmovie-1)*6].get('title')} {data[(countofmovie-1)*6].get('film_quality')+' ' if data[(countofmovie-1)*6].get('film_quality') else ''}{' '.join(data[(countofmovie-1)*6].get('description'))}"))
     media.attach_photo(InputMediaPhoto(data[(countofmovie-1)*6+1].get('img_link'), caption=f"2. {data[(countofmovie-1)*6+1].get('title')} {data[(countofmovie-1)*6+1].get('film_quality')+' ' if data[(countofmovie-1)*6+1].get('film_quality') else ''}{' '.join(data[(countofmovie-1)*6+1].get('description'))}"))
@@ -577,7 +577,7 @@ async def choose(callback_query: types.CallbackQuery):
         # print(eps)
         caption = f"{countofmovie}. {data[countofmovie-1].get('title')}"+f"""{'''
 
-Качество: '''+data[countofmovie-1].get('film_quality') if data[countofmovie-1].get('film_quality') else ''}\n\n"""+'    '.join(data[countofmovie-1].get('description'))+'\n\n'+"Вернуться в главное меню - /back"
+Качество: '''+data[countofmovie-1].get('film_quality') if data[countofmovie-1].get('film_quality') else ''}\n\n"""+'    '.join(data[countofmovie-1].get('description'))+'\n\n'+"Вернуться в главное меню - /menu"
 
     await message1.edit_caption(caption=caption,reply_markup=toseekeyboard)
 

@@ -29,8 +29,8 @@ backbtn = InlineKeyboardMarkup().add(backbtn1)
 
 inline_kb_full = InlineKeyboardMarkup().add(inline_btn_1)
 inline_kb_full.add(InlineKeyboardButton('🔥 Фильмы', callback_data='films'))
-# inline_kb_full.add(InlineKeyboardButton('🔥 Trending', callback_data='films'))
-# inline_kb_full.add(InlineKeyboardButton('🔥 What\'s Popular?', callback_data='films'))
+# inline_kb_full.add(InlineKeyboardButton('🔥 Trending', callback_data='trending'))
+# inline_kb_full.add(InlineKeyboardButton('🔥 What\'s Popular?', callback_data='popular'))
 
 
 firstplayerbtns1 = InlineKeyboardButton('Меню', callback_data='back')
@@ -54,7 +54,7 @@ user_agents = ['Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KH
 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Brave Chrome/89.0.4389.114 Safari/537.36'
 ]
 
-@dp.message_handler(commands=['start', 'back'])
+@dp.message_handler(commands=['start', 'menu'])
 async def process_start_command(msg: types.Message):
     global message1, message2, photos_message, photos_caption_message
     try:

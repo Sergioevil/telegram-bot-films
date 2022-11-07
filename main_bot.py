@@ -471,7 +471,7 @@ async def tomainmenu(callback_query: types.CallbackQuery):
         del photos_caption_message
     except:
         pass
-    message1 = await bot.send_message(callback_query.message.chat.id, 'Главное меню', reply_markup=inline_kb_full)
+    message1 = await bot.send_message(callback_query.message.chat.id, '<b>📃 Главное меню</b>', reply_markup=inline_kb_full, parse_mode="HTML")
 
 
 # __________ search module __________

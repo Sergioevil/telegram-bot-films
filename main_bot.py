@@ -471,7 +471,9 @@ async def tomainmenu(callback_query: types.CallbackQuery):
         del photos_caption_message
     except:
         pass
-    message1 = await bot.send_message(callback_query.message.chat.id, '<b>📃 Главное меню</b>', reply_markup=inline_kb_full, parse_mode="HTML")
+    message1 = await bot.send_message(callback_query.message.chat.id, '''<b>📃 Главное меню</b>
+
+Поиск на английском''', reply_markup=inline_kb_full, parse_mode="HTML")
 
 
 # __________ search module __________
@@ -488,6 +490,9 @@ async def process_start_command(msg: types.Message):
         del message2
     except:
         pass
+    if re.search(r'[йцукенгшщзхъфывапролджэячсмитьбю]+', msg.text.lower()):
+        await bot.send_message(msg.chat.id, 'Язык ввода: ENG')
+        return
     message3 = await bot.send_message(msg.chat.id, 'Поиск...')
     data = parse.search_result_afdah(str(msg.text), user_agents)
     await message3.delete()
